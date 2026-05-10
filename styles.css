@@ -1,0 +1,308 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* merriweather-regular - cyrillic */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Merriweather";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/merriweather-v33-cyrillic-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* merriweather-700 - cyrillic */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Merriweather";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./fonts/merriweather-v33-cyrillic-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* golos-text-regular - cyrillic-ext */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Golos Text";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/golos-text-v7-cyrillic-ext-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* golos-text-500 - cyrillic-ext */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Golos Text";
+  font-style: normal;
+  font-weight: 500;
+  src: url("./fonts/golos-text-v7-cyrillic-ext-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* golos-text-600 - cyrillic-ext */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Golos Text";
+  font-style: normal;
+  font-weight: 600;
+  src: url("./fonts/golos-text-v7-cyrillic-ext-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+:root {
+  --bgColor: #e9ded4;
+  --roundColor: #fbce51;
+  --textColor: #313131;
+  --brightColor: #f54932;
+  --grayColor: #838383;
+  --darkerGrayColor: #6f6f6f;
+  --light: #d0d0d0;
+}
+
+body {
+  font-family: "Golos Text";
+  color: var(--textColor);
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Merriweather";
+  text-transform: uppercase;
+}
+
+.container {
+  padding: 0 72px;
+  flex: 1;
+}
+
+header {
+  background-color: var(--bgColor);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+header .about {
+  width: 40%;
+}
+
+svg {
+  width: 660px;
+  background-color: var(--roundColor);
+  border-radius: 50%;
+  margin: -30px -30px 0 0;
+  /* animation: rotate 10s linear infinite; */
+}
+
+svg path {
+  fill: var(--textColor);
+}
+svg text {
+  font-size: 5px;
+  font-family: "Merriweather";
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.marquee {
+  overflow: hidden;
+  width: 100%;
+  background-color: var(--brightColor);
+  color: white;
+  text-transform: uppercase;
+  font-size: 22px;
+  font-family: "Merriweather";
+}
+
+.marquee p {
+  width: max-content;
+  /* animation: marquee 10s linear infinite; */
+}
+
+.marquee span::after {
+  content: " •";
+  margin: 0 8px;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+h3 {
+  font-size: 36px;
+}
+
+h3 strong {
+  color: var(--brightColor);
+}
+
+h3 .support {
+  width: 764px;
+}
+
+.details {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.details img {
+  max-width: 488px;
+  margin: 0 0 0 -30px;
+}
+
+.details th {
+  color: #6f6f6f;
+}
+.details td {
+  color: #838383;
+}
+
+.details table del {
+  text-decoration-color: var(--brightColor);
+  text-decoration-thickness: 2px;
+}
+
+h2 {
+  font-size: 54px;
+}
+
+.transformation {
+}
+
+.stages {
+}
+
+.piece {
+}
+
+.stage {
+}
+
+footer {
+  background-color: var(--bgColor);
+}
+
+.film {
+  display: grid;
+  /* gap: 16px; */
+  grid-template-columns: repeat(3, 1fr);
+
+  grid-template-areas:
+    "one two three"
+    "four five three"
+    "six seven seven";
+
+  @media (max-width: 768px) {
+    overflow: hidden;
+    width: 100%;
+    grid-template-areas:
+      "one three four six seven"
+      "two three five six seven";
+    grid-template-rows: repeat(2, 180px);
+    grid-template-columns: repeat(5, 100%);
+  }
+}
+
+.film li {
+  list-style-type: none;
+  background-color: lightgray;
+}
+
+.card1 {
+  grid-area: one;
+}
+.card2 {
+  grid-area: two;
+}
+.card3 {
+  grid-area: three;
+}
+.card4 {
+  grid-area: four;
+}
+.card5 {
+  grid-area: five;
+}
+.card6 {
+  grid-area: six;
+}
+.card7 {
+  grid-area: seven;
+}
+
+/* Плавное движение карточек */
+.cards {
+  transition: transform 0.4s ease-in-out;
+}
+
+/* Навигация */
+.transformation nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* gap: 16px; */
+  margin-top: 20px;
+}
+
+nav .arrow {
+  background: none;
+  border: 1px solid #999;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+nav button:hover:not(:disabled) {
+  background: #f0f0f0;
+}
+nav button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.pagination {
+  display: flex;
+  gap: 8px;
+}
+
+.pagination button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ccc;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.pagination button.active {
+  background: #333;
+  transform: scale(1.3);
+}
