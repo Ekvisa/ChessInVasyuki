@@ -11,24 +11,37 @@
     <div class="page">
       <header class="container">
         <div class="about">
-          <h1>Превратите уездный город в столицу земного шара</h1>
+          <img src="./images/logo.svg" alt="Клуб четырех коней" />
+          <h1>
+            <span class="left"
+              >Превратите <br />
+              уездный город</span
+            >
+            <span class="center"
+              >в столицу<br />
+              земного шара</span
+            >
+          </h1>
           <p>
             Оплатите взнос на телеграммы для организации Международного
             васюкинского турнира по шахматам
           </p>
-          <a href="#">Поддержать шахматную мысль</a>
-          <a href="#">Подробнее о турнире</a>
+          <div class="buttons">
+            <a href="#" class="support">Поддержать шахматную мысль</a>
+            <a href="#" class="more">Подробнее о турнире</a>
+          </div>
         </div>
         <svg viewBox="0 0 100 100">
           <defs>
             <path
               id="circlePath"
-              d="M 50, 50 m -40, 0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0"
+              d="M 50, 50 m -46, 0 a 46,46 0 1,1 92,0 a 46,46 0 1,1 -92,0"
             />
+            <!-- path - окружность с центром в середине svg и радиусом 46 -->
           </defs>
-          <text>
-            <!-- textPath href="#circlePath" startOffset="50%" text-anchor="middle" -->
-            <textPath href="#circlePath">
+          <text font-size="3">
+            <!-- Растянем текст по длине path: 2π * 46 = 289, и уменьшим на единичку, чтобы не склеились начало и конец текста -->
+            <textPath href="#circlePath" textLength="288">
               Из Васюков полетят сигналы на Марс • Из Васюков полетят сигналы на
               Марс • Из Васюков полетят сигналы на Марс • Из Васюков полетят
               сигналы на Марс •
@@ -93,8 +106,8 @@
 
         <section class="transformation">
           <h2>Этапы преображения Васюков</h2>
-          <div class="scene">
-            <ul class="film">
+          <div class="viewport">
+            <ul class="stages">
               <li class="card card1">
                 1 Строительство железнодорожной магистрали Москва-Васюки
               </li>
@@ -121,46 +134,67 @@
               </li>
             </ul>
           </div>
-          <nav>
+          <nav class="sliderNav">
             <button class="arrow prevBtn">&#10094;</button>
-            <div class="pagination"></div>
+            <div class="dotsPagination"></div>
             <button class="arrow nextBtn">&#10095;</button>
           </nav>
         </section>
         <section class="participants">
           <h2>Участники турнира</h2>
-          <ul>
-            <li>
-              <img src="./images/photograph.png" alt="photo" />
-              <h4>Хозе-Рауль Капабланка</h4>
-              <p>Чемпион мира по шахматам</p>
-            </li>
-            <li>
-              <img src="./images/photograph.png" alt="photo" />
-              <h4>Эммануил Ласкер</h4>
-              <p>Чемпион мира по шахматам</p>
-            </li>
-            <li>
-              <img src="./images/photograph.png" alt="photo" />
-              <h4>Александр Алехин</h4>
-              <p>Чемпион мира по шахматам</p>
-            </li>
-            <li>
-              <img src="./images/photograph.png" alt="photo" />
-              <h4>Арон Нимцович</h4>
-              <p>Чемпион мира по шахматам</p>
-            </li>
-            <li>
-              <img src="./images/photograph.png" alt="photo" />
-              <h4>Рихард Рети</h4>
-              <p>Чемпион мира по шахматам</p>
-            </li>
-            <li>
-              <img src="./images/photograph.png" alt="photo" />
-              <h4>Остап Бендер</h4>
-              <p>Гроссмейстер</p>
-            </li>
-          </ul>
+          <div class="viewport">
+            <ul class="players">
+              <li>
+                <div class="photo">
+                  <img src="./images/player.png" alt="photo" />
+                </div>
+                <h4>Хозе-Рауль Капабланка</h4>
+                <p>Чемпион мира по шахматам</p>
+              </li>
+              <li>
+                <div class="photo">
+                  <img src="./images/player.png" alt="photo" />
+                </div>
+                <h4>Эммануил Ласкер</h4>
+                <p>Чемпион мира по шахматам</p>
+              </li>
+              <li>
+                <div class="photo">
+                  <img src="./images/player.png" alt="photo" />
+                </div>
+                <h4>Александр Алехин</h4>
+                <p>Чемпион мира по шахматам</p>
+              </li>
+              <li>
+                <div class="photo">
+                  <img src="./images/player.png" alt="photo" />
+                </div>
+                <h4>Арон Нимцович</h4>
+                <p>Чемпион мира по шахматам</p>
+              </li>
+              <li>
+                <div class="photo">
+                  <img src="./images/player.png" alt="photo" />
+                </div>
+                <h4>Рихард Рети</h4>
+                <p>Чемпион мира по шахматам</p>
+              </li>
+              <li>
+                <div class="photo">
+                  <img src="./images/player.png" alt="photo" />
+                </div>
+                <h4>Остап Бендер</h4>
+                <p>Гроссмейстер</p>
+              </li>
+            </ul>
+          </div>
+          <nav class="sliderNav">
+            <button class="arrow prevBtn">&#10094;</button>
+            <div class="numbersPagination">
+              <span class="active"></span> / <span class="common"></span>
+            </div>
+            <button class="arrow nextBtn">&#10095;</button>
+          </nav>
         </section>
       </main>
 
@@ -185,6 +219,7 @@
       </footer>
     </div>
 
-    <script src="script.js"></script>
+    <script src="stagesSlider.js"></script>
+    <script src="playersSlider.js"></script>
   </body>
 </html>
