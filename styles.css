@@ -56,8 +56,10 @@
   --darkColor: #1f1f1f;
   --brightColor: #f54932;
   --grayColor: #838383;
+  --lightGrayColor: #d6d6d6;
   --darkerGrayColor: #6f6f6f;
   --light: #d0d0d0;
+  --detailsColor: #3057a2;
 }
 
 body {
@@ -73,8 +75,17 @@ body {
   align-items: stretch;
 }
 
+section {
+  max-width: 1222px;
+  margin: 0 auto;
+}
+
 header {
   background-color: var(--bgColor);
+  padding: 26px 0 132px;
+}
+
+.header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -85,7 +96,6 @@ header {
 }
 
 header .about {
-  /* width: 40%; */
   max-width: 550px;
   z-index: 1;
 }
@@ -94,6 +104,7 @@ header .about {
   font-size: 18px;
   text-align: center;
   line-height: 130%;
+  margin: 1em 0;
 }
 
 .about .buttons {
@@ -110,7 +121,6 @@ header .about {
   flex: 1;
   font-size: 16px;
   line-height: 130%;
-  /* background-color: gray; */
   padding: 10px 2em;
   border-radius: 2em;
   text-align: center;
@@ -118,11 +128,11 @@ header .about {
   text-decoration: none;
 }
 
-a.support {
+a.lection {
   background-color: var(--darkColor);
   color: white;
 }
-a.support:hover {
+a.lection:hover {
   background-color: var(--roundColor);
   color: var(--darkColor);
 }
@@ -152,6 +162,7 @@ h1 {
   line-height: 110%;
   font-weight: normal;
   white-space: nowrap;
+  margin: 1em 0;
   @media (max-width: 768px) {
     font-size: 36px;
   }
@@ -165,16 +176,23 @@ h1 .center {
 }
 
 .container {
-  padding: 0 72px;
+  /* padding: 0 72px;
+  flex: 1; */
+}
+
+.circle {
   flex: 1;
+  position: relative;
+  top: -70px;
+  right: -70px;
 }
 
 svg {
+  /* margin: -30px -30px 0 0;*/
   max-width: min(660px, 100%);
-  flex: 1;
   background-color: var(--roundColor);
   border-radius: 50%;
-  margin: -30px -30px 0 0;
+  position: absolute;
   /* animation: rotate 10s linear infinite; */
 }
 
@@ -184,7 +202,8 @@ svg path {
 svg text {
   font-family: "Merriweather";
   text-transform: uppercase;
-  mix-blend-mode: overlay;
+  fill: #f9b01f;
+  /* просто fill, т.к. mix-blend-mode: overlay не работает в Firefox 😞 */
 }
 
 @keyframes rotate {
@@ -220,7 +239,6 @@ svg text {
   from {
     transform: translateX(0);
   }
-
   to {
     transform: translateX(-50%);
   }
@@ -234,40 +252,117 @@ h3 strong {
   color: var(--brightColor);
 }
 
-h3 .support {
-  width: 764px;
+.lection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lection h3 {
+  flex: 2;
+}
+.lection .debut {
+  flex: 1;
+  text-align: center;
+}
+
+.lection img {
+  filter: invert(100%) grayscale(100%);
+  transform: rotate(10deg);
+}
+
+/* .event img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+} */
+
+.game {
+  display: flex;
+  align-items: start;
+}
+
+.game .collage {
+  width: clamp(300px, 50%, 500px);
+}
+
+.collage img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.data {
+  flex: 1;
+}
+
+.table .item {
+  display: flex;
+  border-bottom: 1px solid var(--light);
+  font-size: 20px;
+  @media (max-width: 1200px) {
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em 0;
+  }
+}
+
+.table .item:last-child {
+  border-bottom: none;
+}
+
+.table .item:first-child p {
+  padding-top: 0;
+}
+
+.table .item:last-child p {
+  padding-bottom: 0;
+}
+.item p {
+  flex: 1;
+  padding: 1em;
+  align-content: end;
+  @media (max-width: 1200px) {
+    padding: 0;
+  }
+}
+
+.table .key {
+  color: #6f6f6f;
+  padding-left: 0;
+}
+.table .value {
+  font-weight: bold;
+  border-left: 1px solid var(--light);
+  padding-right: 0;
+  @media (max-width: 1200px) {
+    border: none;
+  }
+}
+
+.table del {
+  text-decoration-color: var(--brightColor);
+  text-decoration-thickness: 2px;
 }
 
 .details {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.details img {
-  max-width: 488px;
-  margin: 0 0 0 -30px;
-}
-
-.details th {
-  color: #6f6f6f;
-}
-.details td {
-  color: #838383;
-}
-
-.details table del {
-  text-decoration-color: var(--brightColor);
-  text-decoration-thickness: 2px;
+  color: var(--detailsColor);
+  font-size: 20px;
 }
 
 h2 {
   font-size: 54px;
 }
 
-/* .transformation {
+.transformation h2 {
+  display: inline;
 }
 
-.piece {
+.transformation .details {
+  display: inline-block;
+}
+
+/* .piece {
 } */
 
 .viewport {
@@ -284,44 +379,74 @@ footer {
   grid-template-columns: repeat(3, 1fr);
 
   grid-template-areas:
-    "one two three"
-    "four five three"
+    "one-two one-two three"
+    "four-five four-five three"
     "six seven seven";
-
+  @media (min-width: 768px) {
+    gap: 20px;
+  }
   @media (max-width: 768px) {
-    grid-template-areas:
-      "one three four six seven"
-      "two three five six seven";
-    grid-template-rows: repeat(2, 180px);
+    grid-template-areas: "one-two three four-five six seven";
+    grid-template-rows: 300px;
     grid-template-columns: repeat(5, 100%);
   }
 }
 
-.stages li {
-  list-style-type: none;
-  background-color: lightgray;
+.stages article {
+  background-color: var(--lightGrayColor);
+  display: flex;
+  gap: 20px;
+  padding: 20px;
 }
-
-.card1 {
-  grid-area: one;
+.one-two {
+  grid-area: one-two;
 }
-.card2 {
-  grid-area: two;
-}
-.card3 {
+.three {
   grid-area: three;
 }
-.card4 {
-  grid-area: four;
+.four-five {
+  grid-area: four-five;
 }
-.card5 {
-  grid-area: five;
-}
-.card6 {
+.six {
   grid-area: six;
 }
-.card7 {
+.seven {
   grid-area: seven;
+}
+
+article.double {
+  gap: 60px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.double div {
+  display: flex;
+  gap: 20px;
+  @media (min-width: 768px) {
+    flex: 1;
+  }
+}
+
+/* .double div:nth-child(2) {
+  padding-left: 20px;
+} */
+
+.stages span {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+}
+
+.stages p {
+  font-weight: 500;
 }
 
 /* Плавное движение карточек */
@@ -401,9 +526,21 @@ nav button:disabled {
   flex-direction: column;
   align-items: center;
   transition: transform 1s ease;
+  padding: 0 36px;
   @media (min-width: 768px) {
     flex-basis: calc(100% / 3);
   }
+}
+
+.players li a {
+  border: 1px solid;
+  padding: 0.5em 1em;
+  border-radius: 2em;
+  text-decoration: none;
+}
+.players li a:hover {
+  color: white;
+  background-color: var(--detailsColor);
 }
 
 .players .photo {
@@ -418,4 +555,9 @@ nav button:disabled {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+footer {
+  padding: 40px 0 80px;
+  font-size: 16px;
 }
