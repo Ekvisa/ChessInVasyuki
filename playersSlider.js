@@ -1,37 +1,3 @@
-// const players = document.querySelectorAll(".players li");
-// const totalPlayers = players.length;
-
-// let playerIndex = 0;
-
-// function updatePlayer() {
-//   players.forEach((p) => {
-//     p.style.transform = `translateX(-${playerIndex * 100}%)`;
-//   });
-// }
-
-// prevPlayerBtn.addEventListener("click", () => {
-//   if (playerIndex > 0) playerIndex--;
-//   else playerIndex = totalPlayers - 1;
-//   updatePlayer();
-// });
-// nextPlayerBtn.addEventListener("click", () => {
-//   if (playerIndex < totalPlayers - 1) playerIndex++;
-//   else playerIndex = 0;
-//   updatePlayer();
-// });
-
-// updatePlayer();
-
-// setInterval(() => {
-//   playerIndex++;
-
-//   if (playerIndex > totalPlayers - 1) {
-//     playerIndex = 0;
-//   }
-
-//   updatePlayer();
-// }, 4000);
-
 const prevPlayerBtn = document.querySelector(".participants .prevBtn");
 const nextPlayerBtn = document.querySelector(".participants .nextBtn");
 const track = document.querySelector(".players");
@@ -55,7 +21,7 @@ console.log(track);
 let allSlides = track.querySelectorAll("li");
 let currentIndex = clonesCount; //это первый слайд в разметке
 let autoplayTimer = null;
-const AUTOPLAY_DELAY = 1000;
+const AUTOPLAY_DELAY = 4000;
 
 //Функкция получения ширины одного слайда:
 function getSlideWidth() {
