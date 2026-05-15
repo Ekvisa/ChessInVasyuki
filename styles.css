@@ -123,7 +123,6 @@ header .about {
   flex-direction: column;
   align-items: start;
   gap: 26px;
-  /* justify-content: space-between; */
   margin-top: 26px;
   max-width: 542px;
   z-index: 1;
@@ -144,7 +143,6 @@ h1 {
   font-size: 18px;
   text-align: center;
   line-height: 130%;
-  /* margin-top: 24px; */
 }
 
 .about .buttons {
@@ -282,6 +280,8 @@ svg text {
   }
 }
 
+/* Бегущая строка */
+
 .marquee {
   overflow: hidden;
   width: 100%;
@@ -311,6 +311,8 @@ svg text {
     transform: translateX(-50%);
   }
 }
+
+/* Контент */
 
 main {
   display: flex;
@@ -482,6 +484,8 @@ main {
   margin-top: 42px;
 }
 
+/* Этапы преображения Васюков */
+
 .transformation {
   @media (max-width: 767px) {
     display: flex;
@@ -543,6 +547,7 @@ h2 {
   gap: var(--stagesGap);
   padding: var(--stagesGap);
 }
+
 .stages article:nth-last-child(n + 3) {
   @media (min-width: 768px) {
     background-color: unset;
@@ -601,12 +606,10 @@ article.double {
   line-height: 120%;
 }
 
-/* Плавное движение карточек */
 .cards {
   transition: transform 0.4s ease-in-out;
 }
 
-/* Навигация */
 .sliderNav {
   display: flex;
   align-items: center;
@@ -643,6 +646,7 @@ nav .arrow {
 .prevBtn {
   background: url("./images/left_arrow.png") no-repeat 40%;
 }
+
 .nextBtn {
   background: url("./images/right_arrow.png") no-repeat 60%;
 }
@@ -650,6 +654,7 @@ nav .arrow {
 nav button:hover {
   background-color: var(--roundColor);
 }
+
 nav button:disabled {
   background-color: var(--lightGrayColor);
   cursor: default;
@@ -669,9 +674,12 @@ nav button:disabled {
   padding: 0;
   cursor: pointer;
 }
+
 .dotsPagination button.active {
   background: #333;
 }
+
+/* Участники турнира */
 
 .participants {
   position: relative;
@@ -680,7 +688,6 @@ nav button:disabled {
   gap: 58px;
   width: 100%;
 }
-
 .participants .sliderNav {
   gap: 16px;
   @media (min-width: 1200px) {
@@ -756,6 +763,8 @@ nav button:disabled {
   height: 100%;
   object-fit: cover;
 }
+
+/* Футер */
 
 footer {
   background-color: var(--bgColor);
