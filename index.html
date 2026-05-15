@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Васюки</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles375.css" />
+    <!-- styles375.css нужен для настройки соответствия Pixel Perfect -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
   </head>
   <body>
@@ -32,8 +34,10 @@
               васюкинского турнира по шахматам
             </p>
             <div class="buttons">
-              <a href="#" class="lectionLink">Поддержать шахматную мысль</a>
-              <a href="#" class="dataLink">Подробнее о турнире</a>
+              <a href="#lection" class="lectionLink"
+                >Поддержать шахматную мысль</a
+              >
+              <a href="#data" class="dataLink">Подробнее о турнире</a>
             </div>
           </div>
           <div class="circle">
@@ -75,7 +79,7 @@
       </div>
       <main class="container">
         <section class="event">
-          <div class="lection">
+          <div class="lection" id="lection">
             <p class="bigText">
               <span>Чтобы поддержать Международный васюкинский турнир,</span>
               <!-- в макете здесь какая-то картинка (с овальной маской), но я не смогла её увидеть, поэтому вставлю такую пешку: -->
@@ -96,7 +100,7 @@
               <strong>одновременной игры в шахматы на 160 досках</strong>
               гроссмейстера О. Бендера
             </p>
-            <div class="data">
+            <div class="data" id="data">
               <dl class="table">
                 <dt>Место проведения:</dt>
                 <dd>Клуб «Картонажник»</dd>

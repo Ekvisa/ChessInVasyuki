@@ -1,0 +1,47 @@
+/* Небольшие Pixel Perfect корректировки для 375px */
+@media (max-width: 395px) {
+  header .about {
+    margin-top: 18px;
+  }
+  .logo {
+    width: 213px;
+  }
+  h1 {
+    margin-top: 16px;
+  }
+  .about p {
+    text-align: left;
+  }
+  .about .buttons {
+    margin-top: 0;
+  }
+
+  .buttons a {
+    padding: 14px 36px;
+  }
+  .circle {
+    width: 285px;
+  }
+  .svgWrapper {
+    transform: translate(0, -80px);
+  }
+  .circle img {
+    scale: (0.4);
+  }
+  .marquee {
+    font-size: 16px;
+  }
+  main {
+    margin: 36px 0 80px;
+    gap: 12px;
+  }
+  .bigText {
+    margin: 0;
+  }
+  .event {
+    gap: 100px;
+  }
+  .game .collage {
+    translate: 0px -44px;
+  }
+}

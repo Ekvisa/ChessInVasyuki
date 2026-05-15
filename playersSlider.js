@@ -99,12 +99,12 @@ document
   .querySelector(".participants .viewport")
   .addEventListener("mouseleave", startAutoplay);
 
-// 8. Ресайз (пересчёт позиции при изменении ширины экрана)
-// let resizeTimer;
-// window.addEventListener("resize", () => {
-//   clearTimeout(resizeTimer);
-//   resizeTimer = setTimeout(() => move(false), 150);
-// });
+//Пересчёт позиции при изменении ширины экрана:
+let resizeTimer;
+window.addEventListener("resize", () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => move(false), 150);
+});
 
 //Инициализация:
 move(false);
