@@ -452,27 +452,22 @@ main {
 .table dt {
   color: #6f6f6f;
   padding-left: 0;
+  @media (max-width: 576px) {
+    border: none;
+  }
 }
 
 .table dd {
+  border-left: 1px solid var(--light);
   @media (max-width: 576px) {
     padding-left: 0;
+    border-left: none;
   }
 }
 
-.table dt {
-  @media (max-width: 576px) {
-    border: none;
-  }
-}
-
-.table dl {
-  font-weight: bold;
-  border-left: 1px solid var(--light);
-  padding-right: 0;
-  @media (max-width: 576px) {
-    border: none;
-  }
+.table del {
+  text-decoration-color: var(--brightColor);
+  text-decoration-thickness: 2px;
 }
 
 .details {
